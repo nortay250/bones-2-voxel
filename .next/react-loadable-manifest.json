@@ -1,0 +1,8 @@
+{
+  "voxel/[voxelId].js -> ../../components/VoxelImage": {
+    "id": "voxel/[voxelId].js -> ../../components/VoxelImage",
+    "files": [
+      "static/chunks/components_VoxelImage_js.js"
+    ]
+  }
+}
