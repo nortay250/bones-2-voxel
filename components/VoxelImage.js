@@ -87,7 +87,7 @@ module.exports = function VoxelImage() {
 
   useEffect(() => {
     // Debug
-    // const gui = new dat.GUI();
+    const gui = new dat.GUI();
 
     //Model
     loader.load(`/gltf/${voxelId}.gltf`, (gltf) => {
@@ -148,11 +148,11 @@ module.exports = function VoxelImage() {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
     // gui
-    //   .add(ambientLight, "intensity")
+    //   .add(ambientLight, 'intensity')
     //   .min(-10)
     //   .max(10)
     //   .step(0.001)
-    //   .name("ambientlightintensity");
+    //   .name('ambientlightintensity');
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
     directionalLight.position.set(9, 10, 10);
@@ -168,59 +168,59 @@ module.exports = function VoxelImage() {
 
     scene.add(directionalLight);
 
-    // gui
-    //   .add(directionalLight, "intensity")
-    //   .min(0)
-    //   .max(10)
-    //   .step(0.001)
-    //   .name("directionlightintensity");
-    // gui
-    //   .add(directionalLight.position, "x")
-    //   .min(-10)
-    //   .max(10)
-    //   .step(0.001)
-    //   .name("directionlightX");
-    // gui
-    //   .add(directionalLight.position, "y")
-    //   .min(-10)
-    //   .max(10)
-    //   .step(0.001)
-    //   .name("directionlightY");
-    // gui
-    //   .add(directionalLight2.position, "z")
-    //   .min(-10)
-    //   .max(10)
-    //   .step(0.001)
-    //   .name("directionlightZ");
+    gui
+      .add(directionalLight, 'intensity')
+      .min(0)
+      .max(10)
+      .step(0.001)
+      .name('directionlightintensity');
+    gui
+      .add(directionalLight.position, 'x')
+      .min(-10)
+      .max(10)
+      .step(0.001)
+      .name('directionlightX');
+    gui
+      .add(directionalLight.position, 'y')
+      .min(-10)
+      .max(10)
+      .step(0.001)
+      .name('directionlightY');
+    gui
+      .add(directionalLight.position, 'z')
+      .min(-10)
+      .max(10)
+      .step(0.001)
+      .name('directionlightZ');
 
     const directionalLight2 = new THREE.DirectionalLight(0xffffff, 3);
     directionalLight2.position.set(-10, 10, -10);
     scene.add(directionalLight2);
 
-    // gui
-    //   .add(directionalLight2, "intensity")
-    //   .min(0)
-    //   .max(10)
-    //   .step(0.001)
-    //   .name("directionlight2intensity");
-    // gui
-    //   .add(directionalLight2.position, "x")
-    //   .min(-10)
-    //   .max(10)
-    //   .step(0.001)
-    //   .name("directionlight2X");
-    // gui
-    //   .add(directionalLight2.position, "y")
-    //   .min(-10)
-    //   .max(10)
-    //   .step(0.001)
-    //   .name("directionlight2Y");
-    // gui
-    //   .add(directionalLight2.position, "z")
-    //   .min(-10)
-    //   .max(10)
-    //   .step(0.001)
-    //   .name("directionlight2Z");
+    gui
+      .add(directionalLight2, 'intensity')
+      .min(0)
+      .max(10)
+      .step(0.001)
+      .name('directionlight2intensity');
+    gui
+      .add(directionalLight2.position, 'x')
+      .min(-10)
+      .max(10)
+      .step(0.001)
+      .name('directionlight2X');
+    gui
+      .add(directionalLight2.position, 'y')
+      .min(-10)
+      .max(10)
+      .step(0.001)
+      .name('directionlight2Y');
+    gui
+      .add(directionalLight2.position, 'z')
+      .min(-10)
+      .max(10)
+      .step(0.001)
+      .name('directionlight2Z');
 
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.shadowMap.enabled = true;
